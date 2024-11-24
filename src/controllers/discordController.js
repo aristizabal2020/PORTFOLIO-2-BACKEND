@@ -56,7 +56,7 @@ const getAuthUserDiscord = async ({ query }, res) => {
                 client_secret: process.env.CLIENT_SECRET,
                 code, // Código recibido de la redirección OAuth2
                 grant_type: 'authorization_code',
-                redirect_uri: `http://localhost:${process.env.PORT}/profile/user`, // Asegúrate que coincida con el configurado en Discord
+                redirect_uri: `https://api.aristizabal.dev:${process.env.PORT}/profile/user`, // Asegúrate que coincida con el configurado en Discord
                 scope: 'identify email',
               }).toString(),
               {
