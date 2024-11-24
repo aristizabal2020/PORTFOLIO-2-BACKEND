@@ -1,7 +1,8 @@
 const app = require('./app');
 const Greenlock = require('greenlock-express');
 const path = require('path');
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
+
 
 const PORT = process.env.PORT || 6767;
 
@@ -20,3 +21,8 @@ const greenlock = Greenlock.init({
 
 // Iniciar servidor HTTPS con Greenlock
 greenlock.serve(app);
+
+// Escuchar en el puerto configurado
+app.listen(PORT, () => {
+  console.log(`Server is running on https://localhost:${PORT}`);
+});
