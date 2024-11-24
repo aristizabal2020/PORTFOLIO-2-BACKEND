@@ -6,10 +6,6 @@ require('dotenv').config({ path: '../.env' });
 
 const PORT = process.env.PORT || 6767;
 
-// app.listen(PORT, () => {
-//     console.log(`Server is running on http://localhost:${PORT}`);
-// });
-
 // Configurar Greenlock certificado SSL
 const greenlock = Greenlock.init({
     packageRoot: path.join(__dirname, '../'), // Directorio raíz del paquete
