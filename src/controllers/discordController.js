@@ -13,10 +13,19 @@ const getServerInfo = async (req, res) => {
             },
         });
 
-        const { id, name, memberCount, emojis, stickers, icon } = response.data;
+        const { id,
+            name, 
+            description, 
+            emojis, 
+            stickers, 
+            approximate_member_count, 
+            approximate_presence_count, 
+            premium_tier, 
+            icon } = response.data;
 
         // res.json(response.data)
         res.json({
+            id,
             name,
             description,
             emojis: emojis.length,
